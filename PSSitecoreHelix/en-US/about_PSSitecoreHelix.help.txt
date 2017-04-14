@@ -1,0 +1,16 @@
+PSTOPIC
+    about_PSSitecoreHelix
+
+SHORT DESCRIPTION
+    PSSitecoreHelix allows you to quickly setup a Sitecore Helix solution and modules
+
+LONG DESCRIPTION
+    PSSitecoreHelix allows you to quickly setup a Sitecore Helix solution and modules
+
+    You can find Sitecore Helix principles here:
+    http://helix.sitecore.net/index.html
+
+DETAILED DESCRIPTION
+    This is a rudimentary module that allows you to quickly setup a new Visual Studio Solution that follows the Helix principles.
+
+    YOu are also able to add a new feature/foundation/project module that will have the visual studio projects setup and placed in the correct folder structure.
