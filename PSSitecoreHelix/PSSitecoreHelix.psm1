@@ -1,19 +1,19 @@
 #Get public and private function definition files.
-    $Public  = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -ErrorAction SilentlyContinue )
-    $Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue )
+$Public  = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -ErrorAction SilentlyContinue )
+$Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue )
 
 #Dot source the files
-    Foreach($import in @($Public + $Private))
+Foreach($import in @($Public + $Private))
+{
+    Try
     {
-        Try
-        {
-            . $import.fullname
-        }
-        Catch
-        {
-            Write-Error -Message "Failed to import function $($import.fullname): $_"
-        }
+        . $import.fullname
     }
+    Catch
+    {
+        Write-Error -Message "Failed to import function $($import.fullname): $_"
+    }
+}
 
 # TODO: write to config file that users can update with local paths or find way to grab these from file system
 $global:classTemplate = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ProjectTemplates\CSharp\Windows\1033\ClassLibrary\csClassLibrary.vstemplate"
@@ -43,5 +43,4 @@ $global:FeatureFolderName = "Feature"
 $global:FoundationFolderName = "Foundation"
 $global:ProjectFolderName = "Project"
 
-Write-Host $Public.Basename
 Export-ModuleMember -Function $Public.Basename
