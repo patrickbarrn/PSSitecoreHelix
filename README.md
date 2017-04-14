@@ -11,7 +11,7 @@ A Powershell Cmdlet to run inside Visual Studio the generate fast and simple Sit
 - In Visual Studio open NuGet's "Package Manager Console" and type "$profile"
 - Open the Powershell file (note you may have to create the folder and/or the script file) in a text editor
 - Add the following lines to the file and save
-    - Import-Module C:\Projects\PSSitecoreHelix\PSSitecoreHelix\PSSitecoreHelix.psm1
+    - Import-Module {path to module}\PSSitecoreHelix.psm1
     - (optional) Get-Command -Module PSSitecoreHelix
 - Save and restart Visual Studio
 
