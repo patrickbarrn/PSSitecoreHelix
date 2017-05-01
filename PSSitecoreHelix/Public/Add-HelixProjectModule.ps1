@@ -24,14 +24,6 @@ function Add-HelixProjectModule
 
     $projectFile = $childSolutionFolder.AddFromTemplate($global:webTemplate,$newFolder, $projectName);
 
-    #$newFolder = $solutionFolder + $global:projectPath + $project + $global:serializationFolder + $global:tdsProjectName
-    #$projectFile = $childSolutionFolder.AddFromTemplate($global:tdstemplate,$newFolder, $tdsProjectName);
-
-    #$tdsRootFolderPath = $solutionFolder + $global:projectPath + $project + $global:serializationFolder
-    #$tdsProjectRoot = $config.solutionName + "." +$feature
-    #Add-TdsProjectsForModules $childSolutionFolder $tdsRootFolderPath $tdsProjectRoot
-
-    #New
     $tdsRootFolderPath = $solutionFolder + $global:projectPath + $project + $global:serializationFolder
     $tdsProjectRoot = $config.solutionName + "." +$project
     Add-TdsProjectsForModules $childSolutionFolder $tdsRootFolderPath $tdsProjectRoot
