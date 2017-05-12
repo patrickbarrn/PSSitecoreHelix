@@ -15,10 +15,10 @@ Foreach($import in @($Public + $Private))
     }
 }
 
-# TODO: write to config file that users can update with local paths or find way to grab these from file system
-$global:classTemplate = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ProjectTemplates\CSharp\Windows\1033\ClassLibrary\csClassLibrary.vstemplate"
-$global:webTemplate = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ProjectTemplates\CSharp\Web\1033\WebApplicationProject40\EmptyWebApplicationProject40.vstemplate"
-$global:tdstemplate = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\i01faqhl.m5f\ProjectTemplates\TDS Project\TDS Project.vstemplate"
+# Visual Studio template for project setup
+$global:classTemplate = $dte.Solution.GetProjectTemplate("csClassLibrary.vstemplate", "CSharp")
+$global:webTemplate = $dte.Solution.GetProjectTemplate("EmptyWebApplicationProject40.vstemplate", "CSharp")
+$global:tdstemplate = $dte.Solution.GetProjectTemplate("TDS Project.vstemplate", "TDS Project")
 
 # global variables for module
 
