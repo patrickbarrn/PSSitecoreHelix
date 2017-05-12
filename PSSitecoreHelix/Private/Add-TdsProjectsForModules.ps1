@@ -31,7 +31,7 @@ function Add-TdsProjectsForModules
     foreach ($tdsProjectName in $tdsProjectNames)
     {
         $tdsFullProjName = $tdsProjectRoot + ".TDS." + $tdsProjectName
-        $newFolder = $folderPath + $tdsFullProjName
+        $newFolder = $folderPath + "TDS." + $tdsProjectName
 
         $solutionFolder.AddFromTemplate($global:tdstemplate, $newFolder, $tdsFullProjName);
     }
